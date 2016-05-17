@@ -9,7 +9,11 @@ def main():
     words = datain.split(" ")
     replacement = " ".join([findword(word) for word in words])
 
-    print(replacement)
+    print()
+    fancy = u'\u25ac' * (len(replacement)//2 - 1) + u'\u0b9c\u06e9\u06de\u06e9\u0b9c' + u'\u25ac' * (len(replacement)//2 - 1)
+    print(fancy)
+    print(' ' + replacement)
+    print(fancy)
 
 def findword(word):
     wordchance = random.randrange(10)
