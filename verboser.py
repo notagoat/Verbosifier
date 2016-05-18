@@ -21,9 +21,22 @@ def findword(word):
     if (wordchance > 5):
         data = dictionary.synonym(word)
         if data != None:
-            return random.choice(data)
+            nlength = 0
+            tlength = 0
+            c = 0
+            
+            for i in range(len(data)):
+                tlength += len(data[i])
+            choice = random.randrange(tlength)
+
+            while nlength < choice:
+                c += 1
+                if c >= i:
+                    c = i
+                nlength += len(data[c])
+            word = data[c]
+            return(word)
 
     return word
-
 if __name__ == "__main__":
     main()
